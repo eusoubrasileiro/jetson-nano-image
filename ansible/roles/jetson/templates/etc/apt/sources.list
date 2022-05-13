@@ -1,28 +1,10 @@
-deb http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }} main restricted
-deb http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }}-updates main restricted
-deb http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }} universe
-deb http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }}-updates universe
-deb http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }} multiverse
-deb http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }}-updates multiverse
-deb http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }}-backports main restricted universe multiverse
-deb http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }}-security main restricted
-deb http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }}-security universe
-deb http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }}-security multiverse
-
-# Needed for libffi6
-deb http://ports.ubuntu.com/ubuntu-ports/ bionic main
-
-# - storing here only for future use 
-# from /etc/apt/sources.list.d/nvidia-l4t-apt-source.list, created after
-# SPDX-FileCopyrightText: Copyright (c) 2019-2021 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-# SPDX-License-Identifier: LicenseRef-NvidiaProprietary
-#
-# NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
-# property and proprietary rights in and to this material, related
-# documentation and any modifications thereto. Any use, reproduction,
-# disclosure or distribution of this material and related documentation
-# without an express license agreement from NVIDIA CORPORATION or
-# its affiliates is strictly prohibited.
-
-#deb https://repo.download.nvidia.com/jetson/common r32.7 main
-#deb https://repo.download.nvidia.com/jetson/t210 r32.7 main
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic main restricted
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-updates main restricted
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic universe
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-updates universe
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic multiverse
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-updates multiverse
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-backports main restricted universe multiverse
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-security main restricted
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-security universe
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-security multiverse

@@ -7,7 +7,7 @@
 set -e
 
 ARCH=arm64
-RELEASE=focal
+RELEASE=bionic
 
 outdev=/dev/null # default to ignore
 if [ $VERBOSE ]; then 
