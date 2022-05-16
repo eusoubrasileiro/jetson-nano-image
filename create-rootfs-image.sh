@@ -71,18 +71,13 @@ source create-image.sh
 
 # prerequisites for jetson-ffmpeg: deepstream and nvidia-jetpack (dependecy)
 #sudo apt install --no-install-recommends -y nvidia-jetpack deepstream-6.0
-
-# for 4.5.1 deepstream-6.0
-# for 4.4 deepstream-5.0.1
-# https://developer.nvidia.com/deepstream-51-510-1-arm64deb 
-
-
 # My BOARD is A02 looking under the board MODEL: P3541 180-13542-DAFF-A02
-# BUT device tree gives B01 after installing using defaults pythops
-# by ls -l /proc/device-tree/chosen/plugin-manager/ids
-# https://forums.developer.nvidia.com/t/how-to-determine-which-nano/122822/8
 
-# deeepstream tutorial which packages install 
-# https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_Quickstart.html#jetson-setup
+# apt remove thunderbird libreoffice-* -y
+# apt purge cuda-repo-l4t-*local* libvisionworks-*repo -y
+# rm /etc/apt/sources.list.d/cuda*local* /etc/apt/sources.list.d/visionworks*repo*
+# rm -rf /usr/src/linux-headers-*
+# apt-get purge gnome-shell ubuntu-wallpapers-bionic light-themes chromium-browser* libvisionworks libvisionworks-sfm-dev -y
+# apt-get autoremove -y
+# apt clean -y
 
-# https://docs.nvidia.com/jetson/archives/l4t-archived/l4t-3231/index.html#page/Tegra%2520Linux%2520Driver%2520Package%2520Development%2520Guide%2Fflashing.html%23wwpID0E0PG0HA
