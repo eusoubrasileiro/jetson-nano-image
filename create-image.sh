@@ -6,8 +6,6 @@
 
 set -e
 
-BSP=https://developer.nvidia.com/embedded/l4t/r32_release_v7.1/t210/jetson-210_linux_r32.7.1_aarch64.tbz2
-
 outdev=/dev/null # default to ignore
 if [ $VERBOSE ]; then 
        outdev=/dev/stderr
@@ -36,32 +34,6 @@ if [ ! $JETSON_NANO_BOARD ]; then
 	printf "\e[31mJetson nano board type must be specified\e[0m\n"
 	exit 1
 fi
-
-printf "\e[32mBuild the image ...\n"
-
-# Create the build dir if it does not exists
-mkdir -p $JETSON_BUILD_DIR
-
-# Download L4T
-if [ ! "$(ls -A $JETSON_BUILD_DIR)" ]; then
-        printf "\e[32mDownload L4T...       "
-        wget -qO- $BSP | tar -jxpf - -C $JETSON_BUILD_DIR
-	rm $JETSON_BUILD_DIR/Linux_for_Tegra/rootfs/README.txt
-        printf "[OK]\n"
-fi
-
-cp -rp $JETSON_ROOTFS_DIR/*  $JETSON_BUILD_DIR/Linux_for_Tegra/rootfs/ &> $outdev
-
-printf "Applying patches...   "
-patch $JETSON_BUILD_DIR/Linux_for_Tegra/nv_tegra/nv-apply-debs.sh < patches/nv-apply-debs.diff &> $outdev
-printf "[OK]\n"
-
-pushd $JETSON_BUILD_DIR/Linux_for_Tegra/ > /dev/null
-
-printf "Extract L4T...        "
-sudo ./apply_binaries.sh &> $outdev
-popd > /dev/null
-printf "[OK]\n"
 
 pushd $JETSON_BUILD_DIR/Linux_for_Tegra/tools > /dev/null
 

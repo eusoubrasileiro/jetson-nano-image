@@ -1,26 +1,11 @@
-<div align="center">
+## Forked from [pythops jetson-nano-image](https://github.com/pythops/jetson-nano-image):
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![License](https://img.shields.io/badge/license-MIT-blue)]()
-</div>
+### Using Nvidia pre-made Jetson-RootFilesystem
 
-## Instructions here:
+**Ubuntu release**: 18.04
 
-https://pythops.com/post/create-your-own-image-for-jetson-nano-board.html
+**BSP**: 32.7.1_
 
-## Spec:
-**Ubuntu release**: 20.04
-
-**BSP**: 32.7.1
-
-## Supported boards:
-- [Jetson nano](https://developer.nvidia.com/embedded/jetson-nano-developer-kit)
-- [Jetson nano 2GB](https://developer.nvidia.com/embedded/jetson-nano-2gb-developer-kit)
-
-## Looking for professional support ?
-If you need more advanced configuration or a custom setup, you can contact me on this address support@pythops.com
-
-## License
-Copyright Badr BADRI @pythops
-
-MIT
+- Created unified script `create-rootfs-image` 
+- The Root Filesystem is the tarball provided by Nvidia 
+- Build is done in native Focal Ubuntu without Vagrant, Docker or any VM. 

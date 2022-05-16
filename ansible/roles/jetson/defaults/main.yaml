@@ -1,7 +1,0 @@
----
-ubuntu_release: focal
-
-new_user:
-  name: andre
-  shell: /bin/bash
-  password: andre
