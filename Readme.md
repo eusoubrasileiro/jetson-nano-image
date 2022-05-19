@@ -10,7 +10,9 @@
  - Hostname, user and password using BSP tool `l4t_create_default_user.sh`
  - Final jetson-nano image slimmed to 1.7GB.
 
-Flash is done by [original tutorial](https://pythops.com/post/create-your-own-image-for-jetson-nano-board.html) script `flash-image.sh` 
+The scripts **must** be run on a Ubuntu 18.04 (per nvidia instructions on BSP docs). Cannot be a docker containner or wsl2. Using vagrant and virtual-box or a clean Ubuntu 18.04.
+
+Basic instructions for vagrant and flashing is giving by the [original tutorial](https://pythops.com/post/create-your-own-image-for-jetson-nano-board.html) script `flash-image.sh` 
 
 ## Only tested board (A02 revision)
 - [Jetson nano 2GB](https://developer.nvidia.com/embedded/jetson-nano-2gb-developer-kit)
