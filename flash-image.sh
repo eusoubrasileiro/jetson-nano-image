@@ -77,3 +77,24 @@ printf "[OK]\e[0m\n"
 
 printf "\e[32mSuccess!\n"
 printf "\e[32mYour sdcard is ready!\n"
+
+# not working yet
+# resize partition 1 to 12GB and 
+# create a DTA partition at the end with all remaining size
+# printf "\e[32mResizing 128GB Andre!\n"
+# fdisk /dev/mmcblk0 <<EEOF
+# d
+# 1
+# n
+# 1
+
+# +12G
+
+# n
+
+
+
+# w
+# EEOF
+# mkfs -t ext4 /dev/mmcblk0p15
+# printf "[OK]\e[0m\n"

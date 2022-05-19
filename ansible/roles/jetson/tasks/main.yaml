@@ -1,12 +1,5 @@
 ---
   - block: 
-    - name: Update /etc/apt/sources.list
-      template:
-        src: etc/apt/sources.list
-        dest: /etc/apt/sources.list
-        owner: root
-        group: root
-        mode: 0644
 
     - name: Upgrade packages
       apt:
@@ -48,6 +41,8 @@
         - libdrm2
         - libegl-mesa0
         - libegl1
+        - libegl1-mesa
+        - libgtk-3-0
         - libgbm1
         - libglapi-mesa
         - libwayland-server0
@@ -91,6 +86,9 @@
         - usbutils
         - vim
         - wpasupplicant
+        - git 
+        - nginx 
+
 
     - name: Generate locales
       locale_gen:
@@ -98,13 +96,12 @@
         state: present
 
     - name: Enable services
-      systemd:
-        name: "{{ item }}"
-        enabled: yes
+      shell: systemctl enable {{ item }}
       loop:
         - ssh
         - systemd-networkd
-
+        - systemd-resolved
+        
     - name: Update network conf
       template:
         src: etc/netplan/netcfg.yaml
@@ -113,23 +110,4 @@
         group: root
         mode: 0644
 
-    - name: Create new user
-      user:
-        name: "{{ new_user.name }}"
-        shell: "{{ new_user.shell }}"
-        password: "{{ new_user.password | password_hash('sha512') }}"
-        create_home: yes
-        groups: sudo
-        state: present
-
-    - name: Download pip
-      get_url:
-        url: https://bootstrap.pypa.io/get-pip.py
-        dest: /tmp/get-pip.py
-
-    - name: Install pip
-      shell: python3.8 /tmp/get-pip.py --user
-      become: yes
-      become_user: "{{ new_user.name }}"
-    # to avoid everything stops if one package name is wrong hence is not found for example
     ignore_errors: yes 

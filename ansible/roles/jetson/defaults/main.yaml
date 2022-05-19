@@ -1,7 +1,7 @@
 ---
-ubuntu_release: focal
+ubuntu_release: bionic
 
 new_user:
-  name: pythops
+  name: andre
   shell: /bin/bash
-  password: pythops
+  password: andre

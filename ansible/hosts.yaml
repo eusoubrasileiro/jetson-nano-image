@@ -3,3 +3,8 @@ all:
     jetson:
       ansible_host: "{{ lookup('env', 'JETSON_ROOTFS_DIR') }}"
       ansible_executable: /bin/bash
+      # due issue on bionic where /usr/bin/python is python2
+      ansible_python_interpreter: /usr/bin/python3
+
+# it seams I need python3.8 for ansible work properly
+#build-essential locales netplan.io python3-dev systemd udev
