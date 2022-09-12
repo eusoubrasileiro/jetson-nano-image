@@ -55,6 +55,7 @@
         - libgstreamer1.0-0
         - libgstreamer-plugins-bad1.0-0
         - libpangocairo-1.0-0
+        - bridge-utils
 
     - name: Install core packages
       apt:
@@ -87,7 +88,6 @@
         - vim
         - wpasupplicant
         - git 
-        - nginx 
 
 
     - name: Generate locales
