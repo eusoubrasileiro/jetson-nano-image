@@ -17,6 +17,9 @@ RUN apt update && \
         python3 \
         gdisk \
         kpartx
+        python3-pip 
+
+RUN pip3 install ansible 
 
 # Extract the BSP
 RUN mkdir /build && \
