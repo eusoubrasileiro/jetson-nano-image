@@ -68,7 +68,8 @@ RUN apt install -y \
         wpasupplicant \
         parted \
         gdisk \
-        e2fsprogs
+        e2fsprogs \
+        python3-pip 
 
 # Resize the rootfs
 COPY scripts/resizerootfs.sh /usr/local/bin
@@ -82,12 +83,22 @@ RUN locale-gen en_US.UTF-8
 # Network configuration
 COPY config/netcfg.yaml /etc/netplan/netcfg.yaml
 
-# New user
-# username: andre
-# password: xxxxx
-RUN useradd \
-        --create-home \
-        -G sudo \
-        -p $(openssl passwd -6 gig1684) \
-        -s /bin/bash \
-        andre
+# # New user
+# # username: andre
+# # password: xxxxx
+# RUN useradd \
+#         --create-home \
+#         -G sudo \
+#         -p $(openssl passwd -6 gig1684) \
+#         -s /bin/bash \
+#         andre
+
+RUN useradd -d "/home/andre" -m \
+	-G "sudo,video,audio,adm" -s "/bin/bash" \
+	-p $(openssl passwd -6 andre) andre
+
+RUN sudo -u andre pip3 install ansible 
+
+RUN chmod 1777 /tmp
+
+RUN chown andre:andre -R /home/andre

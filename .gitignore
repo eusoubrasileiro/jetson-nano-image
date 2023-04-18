@@ -2,3 +2,4 @@
 *.vagrant/
 jetson.img*
 rootfs/
+from_BSP/
