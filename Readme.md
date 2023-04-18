@@ -34,9 +34,10 @@ Copyright Badr BADRI @pythops
 
 # that is for my jetson nano by Andre
 just build-jetson-image jetson-nano 300
-# revision A02 is the same as -r 300
+# revision A02 is the same as -r 300 
 # https://forums.developer.nvidia.com/t/l4t-32-7-1-jetson-disk-image-creator-sh-no-support-to-jetson-nano-2g-revision-a02/214497
-# working perfectly fine!
+# but BSP jetson-disk-image-creator.sh script says A02 is -r 200 what makes a lot of sense
+# working but motion is showing up all sorts of segfaults
 just build-jetson-image jetson-nano 300
 # partition was not expanded at first boot let's see now if it does that, seams it did work!
 

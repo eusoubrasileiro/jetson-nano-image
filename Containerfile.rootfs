@@ -1,14 +1,10 @@
-FROM ubuntu:focal
+FROM ubuntu:bionic
 
-LABEL org.opencontainers.image.authors="Badr @pythops"
+LABEL org.opencontainers.image.authors="Badr @pythops Andre @eusoubrasileiro"
 
 # Install systemd
 RUN apt update && \
     apt install -y systemd
-
-# Update apt mirrors
-RUN echo "deb http://ports.ubuntu.com/ubuntu-ports/ bionic main" >> /etc/apt/sources.list && \
-    apt update
 
 # Nvidia required packages
 RUN apt install -y \
@@ -33,8 +29,6 @@ RUN apt install -y \
         libegl1 \
         libegl1-mesa \
         libgtk-3-0 \
-        python2 \
-        python-is-python2 \
         libgstreamer1.0-0 \
         libgstreamer-plugins-bad1.0-0 \
         i2c-tools \
@@ -69,7 +63,8 @@ RUN apt install -y \
         parted \
         gdisk \
         e2fsprogs \
-        python3-pip 
+        python3-pip \
+        ansible 
 
 # Resize the rootfs
 COPY scripts/resizerootfs.sh /usr/local/bin
@@ -96,8 +91,6 @@ COPY config/netcfg.yaml /etc/netplan/netcfg.yaml
 RUN useradd -d "/home/andre" -m \
 	-G "sudo,video,audio,adm" -s "/bin/bash" \
 	-p $(openssl passwd -6 andre) andre
-
-RUN sudo -u andre pip3 install ansible 
 
 RUN chmod 1777 /tmp
 

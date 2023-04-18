@@ -47,6 +47,7 @@ else
 		--privileged \
 		-v .:/jetson \
 		-e JETSON_NANO_BOARD="jetson-nano-2gb" \
+		-e JETSON_NANO_REVISION="$2" \
 		localhost/jetson-build-image:latest \
 		create-jetson-image.sh
 fi

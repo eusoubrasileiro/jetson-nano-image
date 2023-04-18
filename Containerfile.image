@@ -1,6 +1,6 @@
-FROM ubuntu
+FROM ubuntu:bionic
 
-LABEL org.opencontainers.image.authors="Badr @pythops"
+LABEL org.opencontainers.image.authors="Badr @pythops Andre @eusoubrasileiro"
 
 # Define the BSP version
 ARG BSP=https://developer.nvidia.com/downloads/remetpack-463r32releasev73t210jetson-210linur3273aarch64tbz2

@@ -4,6 +4,7 @@
 
 case "$JETSON_NANO_BOARD" in
 jetson-nano-2gb)
+	nano_board_revision=${JETSON_NANO_REVISION:=300}
 	printf "Create image for Jetson nano 2GB board... "
 	sudo ./jetson-disk-image-creator.sh -o jetson.img -b jetson-nano-2gb-devkit -r $nano_board_revision
 	cp jetson.img /jetson/
