@@ -19,3 +19,6 @@ Basic instructions for vagrant and flashing is giving by the [original tutorial]
 ## Only tested board (A02 revision) 
 - [Jetson nano 2GB](https://developer.nvidia.com/embedded/jetson-nano-2gb-developer-kit)
 According to [nvidia](https://forums.developer.nvidia.com/t/l4t-32-7-1-jetson-disk-image-creator-sh-no-support-to-jetson-nano-2g-revision-a02/214497) my revision A02 is the same as `-r 300` 
+
+
+### Archived due my board being unstable and having issues rebooting/booting sometimes.
